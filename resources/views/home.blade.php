@@ -20,7 +20,7 @@
                     @foreach($banners as $key => $banner)
                         <div class="carousel-item position-relative {{ $key == 0 ? 'active' : '' }}">
                             <!-- Imagen -->
-                            <img class="d-block w-100" src="{{asset ('storage/'. $banner->image)}}"  
+                            <img class="d-block w-100" src="{{asset ('storage/'. str_replace('\\', '/', $banner->image))}}"  
                                  style="max-width: 100%; max-height: 100vh; object-fit: cover;">
 
                             <!-- Capa semitransparente -->
@@ -182,7 +182,7 @@
                         $imagenes = json_decode($product->images)
                     @endphp
                     @if($imagenes)
-                    <img class="img-fluid w-100" src="storage/{{$imagenes[0]}}" alt=""
+                    <img class="img-fluid w-100" src="{{asset ('storage/' . $imagenes[0])}}" alt=""
                         style="width:100%; height:100%; object-fit:cover;">
                     @else
                     <img class="img-fluid w-100" src="{{asset ('storage/' . $business->image)}}" alt=""
