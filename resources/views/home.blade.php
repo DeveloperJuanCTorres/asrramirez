@@ -182,10 +182,10 @@
                         $imagenes = json_decode($product->images)
                     @endphp
                     @if($imagenes)
-                    <img class="img-fluid w-100" src="{{asset ('storage/' . $imagenes[0])}}" alt=""
+                    <img class="img-fluid w-100" src="{{asset ('storage/' . str_replace('\\', '/', $imagenes[0]))}}" alt=""
                         style="width:100%; height:100%; object-fit:cover;">
                     @else
-                    <img class="img-fluid w-100" src="{{asset ('storage/' . $business->image)}}" alt=""
+                    <img class="img-fluid w-100" src="{{asset ('storage/' . str_replace('\\', '/', $business->image))}}" alt=""
                         style="width:100%; height:100%; object-fit:cover;">
                     @endif
                     <div class="product-action">

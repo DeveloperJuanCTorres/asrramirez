@@ -10,7 +10,7 @@
                 </div>
                 <br> -->
                 <a href="/" class="text-decoration-none">
-                    <img height="50" src="{{asset("storage/$business->image")}}" alt="">
+                    <img height="50" src="{{asset ('storage/' . str_replace('\\', '/', $business->image))}}" alt="">
                 </a>
             </div>
             <div class="col-lg-5 col-6 text-left">
