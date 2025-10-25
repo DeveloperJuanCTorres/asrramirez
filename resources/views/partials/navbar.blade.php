@@ -64,21 +64,15 @@
                         </div>
 
                         <div class="navbar-nav mr-auto py-0">
-                            <a href="/" class="nav-item nav-link active">Inicio</a>
-                            <a href="/store" class="nav-item nav-link">Productos</a>
-                            <a href="/about" class="nav-item nav-link">Sobre nosotros</a>
-                            <a href="/contact" class="nav-item nav-link">Contáctanos</a>
+                            <a href="/" class="nav-item nav-link {{ Request::is('/') ? 'active' : '' }}">Inicio</a>
+                            <a href="/store" class="nav-item nav-link {{ Request::is('store*') ? 'active' : '' }}">Productos</a>
+                            <a href="/about" class="nav-item nav-link {{ Request::is('about') ? 'active' : '' }}">Sobre nosotros</a>
+                            <a href="/contact" class="nav-item nav-link {{ Request::is('contact') ? 'active' : '' }}">Contáctanos</a>
                         </div>
                     </div>
                 </nav>
                 
             </div>
-            <!-- <div class="col-lg-3 destock" style="position: absolute; right: 0;">
-                <div id="promo-btn">
-                    <a class="btn-promo btn-secondary" href="">Ofertas</a>
-                    <img src="img/promo.png" class="promo-tag swing">
-                </div>
-            </div> -->
         </div>
     </div>
 </div>

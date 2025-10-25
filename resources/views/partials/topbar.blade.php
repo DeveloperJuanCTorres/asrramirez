@@ -40,27 +40,26 @@
                 <!-- <h5 class="m-0">{{$business->phone}}</h5> -->
                 <div class="navbar-nav ml-auto py-0 d-lg-block">
                     <!-- <a href=""> -->
-                        <i class="fas fa-user text-white mr-2"></i>
-                        @auth
-                        <!-- <span class="text-white">{{auth::user()->name}}</span> -->
+                        <!--<i class="fas fa-user text-white mr-2"></i>
+                         auth
                         <div class="dropdown" style="display: contents;">
                             <a class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-expanded="false">
-                                {{auth::user()->name}}
+                                auth::user()->name
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                 <li><a class="dropdown-item" href="#">Perfil</a></li>
                                 <li><a class="dropdown-item" href="#">Mis pedidos</a></li>
                                 <li>
-                                    <form method="POST" action="{{ route('logout') }}">
+                                    <form method="POST" action=" route('logout') ">
                                         @csrf
                                         <button type="submit" class="dropdown-item">Cerrar sesión</button>
                                     </form>
                                 </li>
                             </ul>
                         </div>
-                        @else
+                        else
                         <a href="login">Iniciar sesión</a>
-                        @endauth
+                        endauth -->
                         
                     <!-- </a> -->
                     <a href="/cart" class="btn px-0 ml-3">

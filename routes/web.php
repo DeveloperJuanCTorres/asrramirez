@@ -25,6 +25,7 @@ Route::get('/apiproduct', [App\Http\Controllers\HomeController::class, 'apiProdu
 
 Route::post('add', [App\Http\Controllers\CartController::class, 'add'])->name('add');
 Route::get('cart', [App\Http\Controllers\CartController::class, 'cart'])->name('cart');
+Route::post('/cart/update', [App\Http\Controllers\CartController::class, 'update'])->name('cart.update');
 Route::get('cart/clear', [App\Http\Controllers\CartController::class, 'clear'])->name('clear');
 Route::post('cart/removeitem', [App\Http\Controllers\CartController::class, 'removeItem'])->name('removeitem');
 

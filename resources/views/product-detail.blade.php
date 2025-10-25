@@ -278,7 +278,6 @@
 
 @push('scripts')
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-	<script src="{{asset('js/addcart.js')}}"></script>
     @endpush
 
 @endsection
