@@ -11,7 +11,7 @@
         <table width='700' height='222' border='0' align='center' cellpadding='5' cellspacing='0'>
             <tr>
                 <td width='700' align='center' valign='middle'>
-                    <img src="https://compactseguridad.com/img/compact.png" width='420' height='160' />
+                    <img src="{{asset('img/logo-asr.png')}}" width='420' />
                 </td>
             </tr>
             <tr>
