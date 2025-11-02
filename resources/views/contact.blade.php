@@ -27,30 +27,31 @@
         <div class="col-lg-7 mb-5">
             <div class="contact-form bg-light p-30">
                 <div id="success"></div>
-                <form name="sentMessage" id="contactForm" novalidate="novalidate">
+                <form id="contactForm" method="POST" action="{{ route('contact.send') }}" enctype="multipart/form-data">
+                    @csrf
                     <div class="control-group">
-                        <input type="text" class="form-control" id="name" placeholder="Nombre"
+                        <input type="text" class="form-control inputTexto" id="name" name="name" placeholder="Nombre"
                             required="required" data-validation-required-message="Por favor ingrese su nombre" />
                         <p class="help-block text-danger"></p>
                     </div>
                     <div class="control-group">
-                        <input type="email" class="form-control" id="email" placeholder="Email"
+                        <input type="email" class="form-control inputTexto" id="email" name="email" placeholder="Email"
                             required="required" data-validation-required-message="Por favor ingrese su correo" />
                         <p class="help-block text-danger"></p>
                     </div>
                     <div class="control-group">
-                        <input type="text" class="form-control" id="subject" placeholder="Asunto"
+                        <input type="text" class="form-control inputTexto" id="subject" name="subject" placeholder="Asunto"
                             required="required" data-validation-required-message="Ingrese el asunto" />
                         <p class="help-block text-danger"></p>
                     </div>
                     <div class="control-group">
-                        <textarea class="form-control" rows="8" id="message" placeholder="Mensaje..."
+                        <textarea class="form-control inputTexto" rows="8" id="message" name="message" placeholder="Mensaje..."
                             required="required"
                             data-validation-required-message="Ingrese un mensaje"></textarea>
                         <p class="help-block text-danger"></p>
                     </div>
                     <div>
-                        <button class="btn btn-primary py-2 px-4" type="submit" id="sendMessageButton">Enviar mensaje</button>
+                        <button class="btn btn-primary py-2 px-4" type="submit">Enviar mensaje</button>
                     </div>
                 </form>
             </div>
@@ -73,5 +74,110 @@
 
 @include('partials.footer')
 
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<script>
+    document.querySelectorAll('.inputTexto').forEach(function (input) {
+        input.addEventListener('input', function (e) {
+            const prohibido = /[<>{};*$%=()&]/g; // Caracteres que quieres bloquear
+            if (prohibido.test(e.target.value)) {
+                e.target.value = e.target.value.replace(prohibido, '');
+            }
+        });
+    });
+</script> 
+
+<script>
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        let form = this;
+        let formData = new FormData(form);
+
+        // Mostrar loading
+        Swal.fire({
+            title: 'Enviando...',
+            text: 'Por favor espere',
+            allowOutsideClick: false,
+            didOpen: () => {
+                Swal.showLoading()
+            }
+        });
+
+        fetch(form.action, {
+            method: form.method,
+            body: formData,
+            headers: {
+                'X-CSRF-TOKEN': document.querySelector('input[name=_token]').value
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            Swal.close(); // cerrar loading
+
+            if (data.status) {
+                const Toast = Swal.mixin({
+                toast: true,
+                position: "top-end",
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.onmouseenter = Swal.stopTimer;
+                    toast.onmouseleave = Swal.resumeTimer;
+                }
+                });
+                Toast.fire({
+                icon: "success",
+                title: data.msg
+                });  
+
+                form.reset(); // limpiar formulario
+            } else {
+                const Toast = Swal.mixin({
+                toast: true,
+                position: "top-end",
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.onmouseenter = Swal.stopTimer;
+                    toast.onmouseleave = Swal.resumeTimer;
+                }
+                });
+                Toast.fire({
+                icon: "error",
+                title: data.msg
+                });  
+
+                form.reset(); // limpiar formulario
+            }
+        })
+        .catch(error => {
+            Swal.close();
+
+            const Toast = Swal.mixin({
+                toast: true,
+                position: "top-end",
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.onmouseenter = Swal.stopTimer;
+                    toast.onmouseleave = Swal.resumeTimer;
+                }
+                });
+                Toast.fire({
+                icon: "error",
+                title: 'Hubo un problema al enviar. Inténtalo más tarde.'
+                });  
+            
+                form.reset(); // limpiar formulario
+            console.error(error);
+        });
+    });
+</script>
 
 @endsection

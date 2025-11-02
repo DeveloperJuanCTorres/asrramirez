@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\Contactanos;
+use App\Mail\Reclamos;
 use App\Models\Api;
 use App\Models\Banner;
 use App\Models\Brand;
@@ -17,6 +19,7 @@ use Illuminate\Support\Str;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Support\Facades\Storage;
 use Cart;
+use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
 {
@@ -148,6 +151,28 @@ class HomeController extends Controller
         return view('checkout',compact('categories','business','navbar'));
     }
 
+    public function terminosCondiciones()
+    {
+        $business = Company::find(1);
+        $categories = Taxonomy::whereHas('products', function ($query) {
+            $query->where('stock', '>', 0);
+        })->take(8)->get();
+
+        $navbar = '';
+        return view('terminos_condiciones',compact('categories','business','navbar'));
+    }
+
+    public function politicasPrivacidad()
+    {
+        $business = Company::find(1);
+        $categories = Taxonomy::whereHas('products', function ($query) {
+            $query->where('stock', '>', 0);
+        })->take(8)->get();
+
+        $navbar = '';
+        return view('politicas_privacidad',compact('categories','business','navbar'));
+    }
+
     public function reclamaciones()
     {
         $business = Company::find(1);
@@ -277,6 +302,36 @@ class HomeController extends Controller
             
         } catch (\Throwable $th) {
             return response()->json(['status' => false, 'msg' => 'Error:'.$th->getMessage()]);
+        }
+    }
+
+    public function correoContact(Request $request)
+    {
+        $request->validate([
+            'name'    => 'required|string|max:255',
+            'email'   => 'required|email',
+            'subject' => 'required|string|max:255',
+            'message' => 'required|string',
+        ]);
+       
+
+        $correo = new Contactanos($request->all());
+        try {
+            Mail::to('contacto@asrramirez.com')->send($correo);
+            return response()->json(['status' => true, 'msg' => "El correo fue enviado satisfactoriamente"]);
+        } catch (\Exception $e) {
+            return response()->json(['status' => false, 'msg' => "Hubo un error al enviar, inténtalo de nuevo más tarde." . $e->getMessage()]);
+        }
+    }
+
+    public function correoReclamo(Request $request)
+    {
+        $correo = new Reclamos($request);
+        try {
+            Mail::to('reclamos@asrramirez.com')->send($correo);
+            return response()->json(['status' => true, 'msg' => "El correo fue enviado satisfactoriamente"]);
+        } catch (\Exception $e) {
+            return response()->json(['status' => false, 'msg' => "Hubo un error al enviar, inténtalo de nuevo más tarde." . $e->getMessage()]);
         }
     }
 

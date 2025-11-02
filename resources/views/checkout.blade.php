@@ -24,7 +24,7 @@
 <div class="container-fluid">
     <div class="row px-xl-5">
         <div class="col-lg-8">
-            <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Billing Address</span></h5>
+            <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Dirección de envío</span></h5>
             <div class="bg-light p-30 mb-5">
                 <div class="row">
                     <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
@@ -189,11 +189,11 @@
                 <div class="bg-light p-30">
                     <div class="form-group">
                         <div class="custom-control custom-radio">
-                            <input type="radio" class="custom-control-input" name="payment" id="paypal">
-                            <label class="custom-control-label" for="paypal">Paypal</label>
+                            <input type="radio" class="custom-control-input" name="payment" id="paypal" checked>
+                            <label class="custom-control-label" for="paypal">Contra entrega</label>
                         </div>
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <div class="custom-control custom-radio">
                             <input type="radio" class="custom-control-input" name="payment" id="directcheck">
                             <label class="custom-control-label" for="directcheck">Direct Check</label>
@@ -204,7 +204,7 @@
                             <input type="radio" class="custom-control-input" name="payment" id="banktransfer">
                             <label class="custom-control-label" for="banktransfer">Bank Transfer</label>
                         </div>
-                    </div>
+                    </div> -->
                     <button class="btn btn-block btn-primary font-weight-bold py-3 pedido">Realizar pedido</button>
                 </div>
             </div>

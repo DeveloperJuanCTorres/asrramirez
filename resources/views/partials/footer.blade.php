@@ -17,8 +17,8 @@
                         <a class="text-secondary mb-2" href="/store"><i class="fa fa-angle-right mr-2"></i>Tienda</a>
                         <a class="text-secondary mb-2" href="/about"><i class="fa fa-angle-right mr-2"></i>Nosotros</a>
                         <a class="text-secondary mb-2" href="/contact"><i class="fa fa-angle-right mr-2"></i>Contáctanos</a>
-                        <a class="text-secondary mb-2" href="/politicas"><i class="fa fa-angle-right mr-2"></i>Políticas de privacidad</a>
-                        <a class="text-secondary" href="/terminos"><i class="fa fa-angle-right mr-2"></i>Términos y condiciones</a>
+                        <a class="text-secondary mb-2" href="/politicas-privacidad"><i class="fa fa-angle-right mr-2"></i>Políticas de privacidad</a>
+                        <a class="text-secondary" href="/terminos-condiciones"><i class="fa fa-angle-right mr-2"></i>Términos y condiciones</a>
                     </div>
                 </div>
                 <div class="col-md-4 mb-5 p-0">

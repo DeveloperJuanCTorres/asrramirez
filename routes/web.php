@@ -18,6 +18,8 @@ Route::get('/about', [App\Http\Controllers\HomeController::class, 'about'])->nam
 Route::get('/checkout', [App\Http\Controllers\HomeController::class, 'checkout'])->name('checkout');
 Route::get('/buscar', [App\Http\Controllers\HomeController::class, 'buscar'])->name('buscar');
 Route::get('/libro-reclamaciones', [App\Http\Controllers\HomeController::class, 'reclamaciones'])->name('libro-reclamaciones');
+Route::get('/terminos-condiciones', [App\Http\Controllers\HomeController::class, 'terminosCondiciones'])->name('terminos-condiciones');
+Route::get('/politicas-privacidad', [App\Http\Controllers\HomeController::class, 'politicasPrivacidad'])->name('politicas-privacidad');
 
 Route::get('/apibrand', [App\Http\Controllers\HomeController::class, 'apiBrand'])->name('apibrand');
 Route::get('/apicategory', [App\Http\Controllers\HomeController::class, 'apiCategory'])->name('apicategory');
@@ -28,5 +30,8 @@ Route::get('cart', [App\Http\Controllers\CartController::class, 'cart'])->name('
 Route::post('/cart/update', [App\Http\Controllers\CartController::class, 'update'])->name('cart.update');
 Route::get('cart/clear', [App\Http\Controllers\CartController::class, 'clear'])->name('clear');
 Route::post('cart/removeitem', [App\Http\Controllers\CartController::class, 'removeItem'])->name('removeitem');
+
+Route::post('/contact/send', [App\Http\Controllers\HomeController::class, 'correoContact'])->name('contact.send');
+Route::post('/reclamo',[App\Http\Controllers\HomeController::class,'correoReclamo']);
 
 Route::post('/enviar_pedido', [App\Http\Controllers\HomeController::class, 'pedido'])->name('enviar_pedido');
