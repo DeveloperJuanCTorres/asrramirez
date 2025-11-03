@@ -20,7 +20,9 @@
 
 
 <div class="container">
+    @if($business->politicas_privacidad)
     {!! Str::markdown($business->politicas_privacidad) !!}
+    @endif
 </div>
 
 

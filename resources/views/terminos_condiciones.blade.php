@@ -20,7 +20,9 @@
 
 
 <div class="container">
+    @if($business->terminos_condiciones)
     {!! Str::markdown($business->terminos_condiciones) !!}
+    @endif
 </div>
 
 
