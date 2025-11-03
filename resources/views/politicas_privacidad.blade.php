@@ -19,7 +19,7 @@
 <!-- Breadcrumb End -->
 
 
-<div class="container">
+<div class="container" style="min-height: 30vh;">
     @if($business->politicas_privacidad)
     {!! Str::markdown($business->politicas_privacidad) !!}
     @endif
