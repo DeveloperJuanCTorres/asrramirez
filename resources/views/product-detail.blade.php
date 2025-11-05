@@ -97,7 +97,7 @@
                     <label class="">{{$product->brand->name}}</label>
                 </div>
                 <div class="d-flex align-items-center mb-4 pt-2">
-                    <div class="input-group quantity mr-3" style="width: 130px;">
+                    <div class="input-group quantity1 mr-3" style="width: 130px;">
                         <div class="input-group-btn">
                             <button class="btn btn-primary btn-minus">
                                 <i class="fa fa-minus"></i>
@@ -105,7 +105,7 @@
                         </div>
                         <input type="text" class="form-control bg-secondary border-0 text-center" value="1" id="qty">
                         <div class="input-group-btn">
-                            <button class="btn btn-primary btn-plus">
+                            <button class="btn btn-primary btn-plus1">
                                 <i class="fa fa-plus"></i>
                             </button>
                         </div>
@@ -116,7 +116,7 @@
                     </a>
                 </div>
                 <div class="d-flex pt-2">
-                    <strong class="text-dark mr-2">Share on:</strong>
+                    <strong class="text-dark mr-2">Compartir en:</strong>
                     <div class="d-inline-flex">
                         <a class="text-dark px-2" href="">
                             <i class="fab fa-facebook-f"></i>
