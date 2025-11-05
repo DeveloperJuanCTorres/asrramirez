@@ -32,7 +32,7 @@
                     @if($imagenes)
                         @foreach($imagenes as $item)
                         <div class="carousel-item active">
-                            <img class="w-100 h-100" src="{{asset('storage/$item')}}" alt="Image">
+                            <img class="w-100 h-100" src="{{asset('storage/'$iterm)}}" alt="Image">
                         </div>
                         @endforeach
                     @else
