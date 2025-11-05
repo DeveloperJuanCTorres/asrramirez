@@ -224,8 +224,8 @@
 
             container.addEventListener('mousemove', function(e) {
                 const rect = container.getBoundingClientRect();
-                const x = ((e.clientX - rect.left) / rect.width) * 100;
-                const y = ((e.clientY - rect.top) / rect.height) * 100;
+                const x = ((e.clientX - rect.left) / rect.width) * 200;
+                const y = ((e.clientY - rect.top) / rect.height) * 200;
 
                 img.style.transformOrigin = `${x}% ${y}%`;
             });
