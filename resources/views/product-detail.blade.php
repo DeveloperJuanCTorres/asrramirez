@@ -19,6 +19,25 @@
 </div>
 <!-- Breadcrumb End -->
 
+<style>
+    .zoom-container {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .zoom-container img {
+        transition: transform 0.3s ease;
+    }
+
+    .zoom-container:hover img {
+        transform: scale(2); /* Nivel de zoom */
+        cursor: zoom-in;
+    }
+
+    .zoom-container img {
+        transform-origin: center center;
+    }
+</style>
 
 <!-- Shop Detail Start -->
 <div class="container-fluid pb-5">
@@ -32,12 +51,16 @@
                     @if($imagenes)
                         @foreach($imagenes as $key => $item)
                         <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
-                            <img class="w-100 h-100" src="{{asset('storage/' . $item)}}" alt="Image">
+                            <div class="zoom-container">
+                                <img class="w-100 h-100" src="{{asset('storage/' . $item)}}" alt="Image">
+                            </div>
                         </div>
                         @endforeach
                     @else
                     <div class="carousel-item active">
-                        <img class="w-100 h-100" src="{{asset('storage/' . $business->image)}}" alt="Image">
+                        <div class="zoom-container">
+                            <img class="w-100 h-100" src="{{asset('storage/' . $business->image)}}" alt="Image">
+                        </div>
                     </div>
                     @endif
                 </div>
@@ -194,6 +217,24 @@
 
 @push('scripts')
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    @endpush
+
+    <script>
+        document.querySelectorAll('.zoom-container').forEach(container => {
+            const img = container.querySelector('img');
+
+            container.addEventListener('mousemove', function(e) {
+                const rect = container.getBoundingClientRect();
+                const x = ((e.clientX - rect.left) / rect.width) * 100;
+                const y = ((e.clientY - rect.top) / rect.height) * 100;
+
+                img.style.transformOrigin = `${x}% ${y}%`;
+            });
+
+            container.addEventListener('mouseleave', function() {
+                img.style.transformOrigin = "center center";
+            });
+        });
+    </script>
+@endpush
 
 @endsection
