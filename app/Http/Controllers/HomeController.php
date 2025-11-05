@@ -48,7 +48,10 @@ class HomeController extends Controller
 
         $banners = Banner::all();
         $promotions = Promotion::take(2)->get();
-        $products = Product::take(12)->get();
+        // $products = Product::take(12)->get();
+        $products = Product::orderByRaw("CASE WHEN images IS NOT NULL AND images != '[]' THEN 0 ELSE 1 END")
+            ->take(12)
+            ->get();
 
         $pdf = ModelsPdf::find(1);
         $pdfFile = json_decode($pdf->archivo, true); 
