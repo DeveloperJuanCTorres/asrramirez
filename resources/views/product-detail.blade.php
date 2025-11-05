@@ -30,9 +30,9 @@
                         $imagenes = json_decode($product->images)
                     @endphp
                     @if($imagenes)
-                        @foreach($imagenes as $item)
-                        <div class="carousel-item active">
-                            <img class="w-100 h-100" src="{{asset('storage/'$item)}}" alt="Image">
+                        @foreach($imagenes as $key => $item)
+                        <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
+                            <img class="w-100 h-100" src="{{asset('storage/' . $item)}}" alt="Image">
                         </div>
                         @endforeach
                     @else
