@@ -10,6 +10,7 @@ use App\Models\Brand;
 use App\Models\Company;
 use App\Models\Field;
 use App\Models\Order;
+use App\Models\Pdf as ModelsPdf;
 use App\Models\Product;
 use App\Models\Promotion;
 use App\Models\Taxonomy;
@@ -48,8 +49,13 @@ class HomeController extends Controller
         $banners = Banner::all();
         $promotions = Promotion::take(2)->get();
         $products = Product::take(12)->get();
+
+        $pdf = ModelsPdf::find(1);
+        $pdfFile = json_decode($pdf->archivo, true); 
+        $archivo = $pdfFile[0]['download_link'];
+
         $navbar = 'home';
-        return view('home',compact('categories','banners','promotions','products','business','navbar'));
+        return view('home',compact('categories','banners','promotions','products','business','navbar','archivo'));
     }
 
     public function store(Request $request)

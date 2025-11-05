@@ -149,7 +149,7 @@
                     <span class="text-muted" style="font-size: 12px;">Información detallada de cada producto</span>
                 </div>
             </div>
-            <a href="https://asrramirez.com/pdf/lista_precios_asr_ramirez_sac.pdf" target="_blank" class="btn btn-primary my-4">
+            <a href="{{asset ('storage/' . $archivo)}}" target="_blank" class="btn btn-primary my-4">
                 Descargar Catálogo
                 <i class="fa fa-download" aria-hidden="true"></i>
             </a>
