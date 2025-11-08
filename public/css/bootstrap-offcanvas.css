@@ -1,0 +1,66 @@
+.offcanvas {
+  position: fixed;
+  bottom: 0;
+  z-index: 1050;
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  visibility: hidden;
+  background-color: #fff;
+  background-clip: padding-box;
+  outline: 0;
+  transition: transform .3s ease-in-out;
+}
+
+/* Offcanvas hacia la derecha */
+.offcanvas-end {
+  top: 0;
+  right: 0;
+  width: 300px; /* Se puede sobrescribir con .offcanvas-70 */
+  transform: translateX(100%);
+}
+
+/* Mostrar */
+.offcanvas.show {
+  visibility: visible;
+  transform: none;
+}
+
+/* Backdrop */
+.offcanvas-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1040;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,.5);
+  opacity: 1;
+}
+
+/* Header */
+.offcanvas-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .75rem 1rem;
+  /* border-bottom: 1px solid #dee2e6; */
+}
+
+.offcanvas-header .btn-close {
+  padding: .5rem;
+}
+
+/* Body */
+.offcanvas-body {
+  flex-grow: 1;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+/* Opcional → ajustar altura en móvil */
+@media (max-width: 767px) {
+  .offcanvas {
+    height: 100vh;
+  }
+}

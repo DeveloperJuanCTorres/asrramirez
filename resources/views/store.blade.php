@@ -37,11 +37,57 @@
                     </div>
                 </div>
 
+                <div class="filtro-mobil pb-4">
+                    <h4>Filtros</h4>
+                    <a href="" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCategoria" aria-controls="offcanvasCategoria">
+                        <span class="badge bg-info text-dark">Categorías</span>                            
+                    </a>
+                    <a href="" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMarca" aria-controls="offcanvasMarca">
+                        <span class="badge bg-info text-dark">Marcas</span>
+                    </a>
+                </div>
+
+                <div class="offcanvas offcanvas-end offcanvas-70" tabindex="-1" id="offcanvasCategoria" aria-labelledby="offcanvasCategoriaLabel">
+                    <div class="offcanvas-header">
+                        <h5 id="offcanvasCategoriaLabel">Categorías</h5>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="offcanvas" aria-label="Close">x</button>
+                    </div>
+                    <div class="offcanvas-body">
+                        @foreach($categories as $key => $category)                        
+                        <div class="additional-product-item d-flex align-items-center justify-content-between py-2">
+                            <div class="d-flex align-items-center flex-grow-1 me-2">
+                                <input type="radio" class="me-2" id="categorym-{{$key}}" name="categories[]" value="{{ $category->id }}" {{ request('categories') == $category->id ? 'checked' : '' }}>
+                                <label for="categorym-{{$key}}" class="text-dark mb-0" style="font-size: 14px; word-break: break-word;">{{$category->name}}</label>
+                            </div>
+                            <span class="badge border font-weight-normal bg-primary text-white">{{$category->productsInStock->count()}}</span>
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+
+                <div class="offcanvas offcanvas-end offcanvas-70" tabindex="-1" id="offcanvasMarca" aria-labelledby="offcanvasMarcaLabel">
+                    <div class="offcanvas-header">
+                        <h5 id="offcanvasMarcaLabel">Marcas</h5>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="offcanvas" aria-label="Close">X</button>
+                    </div>
+                    <div class="offcanvas-body">
+                        @foreach($brands as $key => $brand)
+                        <div class="additional-product-item d-flex align-items-center justify-content-between py-2">
+                            <div class="d-flex align-items-center flex-grow-1 me-2">
+                                <input type="radio" class="me-2" id="brandm-{{$key}}" name="brands[]" value="{{ $brand->id }}">
+                                <label for="brandm-{{$key}}" class="text-dark mb-0" style="font-size: 13px; word-break: break-word;">{{$brand->name}}</label>
+                            </div>
+                            <span class="badge border font-weight-normal bg-primary text-white">{{$brand->productsInStock->count()}}</span>
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+
                 <div class="mb-4 text-end">
                     <button type="button" id="resetFilters" class="btn btn-sm btn-danger">Limpiar filtros</button>
                 </div>
                 
-                <div class="accordion" id="accordionExample">
+                <div class="accordion filtro-destock" id="accordionExample">
                        
                     <div class="accordion-item">                                
                         <h2 class="accordion-header" id="headingOne">
@@ -57,7 +103,7 @@
                                         <input type="radio" class="custom-control-input" name="categories[]" value="{{ $category->id }}"
                                         {{ request('categories') == $category->id ? 'checked' : '' }}>
                                         <label class="custom-control-label">{{$category->name}}</label>
-                                        <span class="badge border font-weight-normal bg-primary text-white">{{$category->productsInStock->count()}}</span>
+                                        <span class="badge border font-weight-normal bg-primary1 text-white">{{$category->productsInStock->count()}}</span>
                                     </div>
                                     @endforeach
                                 </div>
@@ -78,7 +124,7 @@
                                     <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
                                         <input type="radio" class="custom-control-input" name="brands[]" value="{{ $brand->id }}">
                                         <label class="custom-control-label">{{$brand->name}}</label>
-                                        <span class="badge border font-weight-normal bg-primary text-white">{{$brand->productsInStock->count()}}</span>
+                                        <span class="badge border font-weight-normal bg-primary1 text-white">{{$brand->productsInStock->count()}}</span>
                                     </div>
                                     @endforeach
                                 </div>
@@ -111,6 +157,8 @@
 
 @push('scripts')
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
 <!-- <script src="js/addcart.js"></script> -->
 
 <script>

@@ -2413,10 +2413,10 @@ fieldset:disabled a.btn {
 }
 
 .btn-primary {
-  color: #fff;
-  background-color: rgb(140, 22, 22);
-  border-color: #000;
-  border-radius: 10px;
+  color: #fff !important;
+  background-color: rgb(140, 22, 22) !important;
+  border-color: #000 !important;
+  border-radius: 10px !important;
 }
 
 .btn-primary:hover {
@@ -5604,6 +5604,28 @@ a.close.disabled {
   .modal-lg,
   .modal-xl {
     max-width: 800px;
+  }
+
+  .filtro-destock{
+      display: block;
+  }
+
+  .filtro-mobil{
+      display: none;
+  }  
+}
+
+@media (max-width: 992px) {
+  .filtro-destock{
+      display: none;
+  }
+
+  .filtro-mobil{
+      display: block;
+  } 
+
+  .offcanvas-70 {
+    width: 70% !important;
   }
 }
 

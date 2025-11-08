@@ -35,7 +35,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-     <link href="{{asset('css/wpp.css')}}" rel="stylesheet">
+     <link rel="stylesheet" href="{{ asset('css/bootstrap-offcanvas.css') }}">
+    <link href="{{asset('css/wpp.css')}}" rel="stylesheet">
     <link href="{{asset('lib/animate/animate.min.css')}}" rel="stylesheet">
     <link href="{{asset('lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
 
