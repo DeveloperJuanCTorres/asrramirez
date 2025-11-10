@@ -1,7 +1,7 @@
 <!-- Navbar Start -->
     <div class="container-fluid bg-mobil">
         <div class="row px-xl-5">
-            <div class="col-lg-3 d-none d-lg-block py-2">
+            <div class="col-lg-3 d-none d-lg-block">
                 <a class="btn d-flex align-items-center justify-content-between bg-naranja w-100" data-toggle="collapse" href="#navbar-vertical" style="height: 50px; padding: 0 30px;">
                     <h6 class="text-white m-0">Categorías</h6>
                     <i class="fa fa-angle-down text-white"></i>
@@ -15,7 +15,7 @@
                     </div>
                 </nav>
             </div>
-            <div class="col-lg-6 py-2">
+            <div class="col-lg-6">
                 <nav class="navbar navbar-expand-lg bg-mobil navbar-dark py-3 py-lg-0 px-0">
                     <a href="" class="text-decoration-none d-block d-lg-none">
                         <img height="60" src="{{asset("storage/$business->image")}}" alt="">

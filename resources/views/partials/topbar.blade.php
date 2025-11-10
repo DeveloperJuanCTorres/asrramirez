@@ -2,7 +2,7 @@
 <!-- Topbar Start -->
  <div class="sticky-top">
     <div class="container-fluid bg-mobil sticky-top">
-        <div class="row align-items-center py-3 px-xl-5 d-none d-lg-flex">        
+        <div class="row align-items-center px-xl-5 d-none d-lg-flex">        
             <div class="col-lg-4">
                 <!-- <div class="row">
                     <p class="mb-0 mr-3 text-white"><i class="fa fa-phone-alt text-primary mr-2"></i>{{$business->phone}}</p>
