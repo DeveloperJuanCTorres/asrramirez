@@ -18,7 +18,7 @@
             <div class="col-lg-6 py-2">
                 <nav class="navbar navbar-expand-lg bg-mobil navbar-dark py-3 py-lg-0 px-0">
                     <a href="" class="text-decoration-none d-block d-lg-none">
-                        <img height="50" src="{{asset("storage/$business->image")}}" alt="">
+                        <img height="60" src="{{asset("storage/$business->image")}}" alt="">
                     </a>
                     <div class="row">
                         <!-- Lado derecho: Carrito -->

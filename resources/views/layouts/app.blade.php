@@ -17,7 +17,7 @@
     <link href="img/favicon.ico" rel="icon">
 
     <?php
-        $version = '1993.0.1';
+        $version = '1993.0.2';
     ?>
 
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('logos/16x16.png') }}">
