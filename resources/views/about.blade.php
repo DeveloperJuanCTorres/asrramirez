@@ -8,6 +8,21 @@
 <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
 
 <style>
+    .equal-col {
+        max-width: 380px; /* O el ancho premium que tú desees */
+        width: 100%;
+    }
+
+    .card-body-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .metal-card {
+        height: 100%;
+    }
   :root{
     --metal-1: #0f1113;
     --metal-2: #151619;
@@ -230,113 +245,121 @@
 
 <!-- ====== SECTION - ABOUT INDUSTRIAL (MAIN) ====== -->
 <section class="industrial-bg about-ux py-5">
-  <div class="container">
-    <div class="industrial-panel">
-      <div class="row g-5 align-items-center">
+  <div class="container-fluid">
+    <div class="row px-xl-5">
+        <div class="industrial-panel">
+        <div class="row g-5 align-items-center">
 
-        <!-- LEFT: IMAGE (PARALLAX / 3D) -->
-        <div class="col-lg-6" data-aos="fade-right" data-aos-offset="120">
-          <div class="about-img-wrap" id="parallaxWrap">
-            @if($nosotros)                    
-            <img
-                src="storage/{{$nosotros->image}}"
-                alt="ASR Ramires - repuestos motocicleta"
-                loading="lazy">
-            @endif
-          </div>
-        </div>
-
-        <!-- RIGHT: TEXT + FEATURES -->
-        <div class="col-lg-6" data-aos="fade-left" data-aos-offset="120">
-          <div class="mb-3">
-            <div class="about-headline">{{$nosotros->titulo}}</div>
-          </div>
-
-          <p class="mb-4" style="color:#c7c9cb;">
-            {!! Str::markdown($nosotros->description) !!}
-          </p>
-
-          <div class="row row-cols-1 row-cols-md-1 g-3">
-            <div class="col">
-              <div class="feat-metal" role="article" aria-label="Calidad certificada">
-                <div class="ico"><i class="bi bi-award-fill" aria-hidden="true"></i></div>
-                <div>
-                  <h6>Calidad Certificada</h6>
-                  <p>Componentes con certificación y pruebas de resistencia para uso profesional.</p>
-                </div>
-              </div>
+            <!-- LEFT: IMAGE (PARALLAX / 3D) -->
+            <div class="col-lg-6" data-aos="fade-right" data-aos-offset="120">
+            <div class="about-img-wrap" id="parallaxWrap">
+                @if($nosotros)                    
+                <img
+                    src="storage/{{$nosotros->image}}"
+                    alt="ASR Ramires - repuestos motocicleta"
+                    loading="lazy">
+                @endif
+            </div>
             </div>
 
-            <div class="col">
-              <div class="feat-metal" role="article" aria-label="Servicio técnico">
-                <div class="ico"><i class="bi bi-gear-fill" aria-hidden="true"></i></div>
-                <div>
-                  <h6>Soporte Técnico Especializado</h6>
-                  <p>Asesoría técnica y asistencia posventa para integradores y talleres.</p>
-                </div>
-              </div>
+            <!-- RIGHT: TEXT + FEATURES -->
+            <div class="col-lg-6" data-aos="fade-left" data-aos-offset="120">
+            <div class="mb-3">
+                <div class="about-headline">{{$nosotros->titulo}}</div>
             </div>
 
-            <div class="col">
-              <div class="feat-metal" role="article" aria-label="Distribución">
-                <div class="ico"><i class="bi bi-truck" aria-hidden="true"></i></div>
-                <div>
-                  <h6>Distribución Nacional</h6>
-                  <p>Logística confiable y envíos con seguimiento para cada pedido.</p>
+            <p class="mb-4" style="color:#c7c9cb;">
+                {!! Str::markdown($nosotros->description) !!}
+            </p>
+
+            <div class="row row-cols-1 row-cols-md-1 g-3">
+                <div class="col">
+                <div class="feat-metal" role="article" aria-label="Calidad certificada">
+                    <div class="ico"><i class="bi bi-award-fill" aria-hidden="true"></i></div>
+                    <div>
+                    <h6>Calidad Certificada</h6>
+                    <p>Componentes con certificación y pruebas de resistencia para uso profesional.</p>
+                    </div>
                 </div>
-              </div>
+                </div>
+
+                <div class="col">
+                <div class="feat-metal" role="article" aria-label="Servicio técnico">
+                    <div class="ico"><i class="bi bi-gear-fill" aria-hidden="true"></i></div>
+                    <div>
+                    <h6>Soporte Técnico Especializado</h6>
+                    <p>Asesoría técnica y asistencia posventa para integradores y talleres.</p>
+                    </div>
+                </div>
+                </div>
+
+                <div class="col">
+                <div class="feat-metal" role="article" aria-label="Distribución">
+                    <div class="ico"><i class="bi bi-truck" aria-hidden="true"></i></div>
+                    <div>
+                    <h6>Distribución Nacional</h6>
+                    <p>Logística confiable y envíos con seguimiento para cada pedido.</p>
+                    </div>
+                </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div> <!-- /row -->
-    </div> <!-- /panel -->
+            </div>
+        </div> <!-- /row -->
+        </div> <!-- /panel -->
+    </div>
   </div>
 </section>
 
 <!-- ====== SECTION - MISION / VISION / VALORES ====== -->
 <section class="industrial-bg py-5">
-  <div class="container">
-    <div class="row g-4 d-flex align-items-stretch">
+  <div class="container-fluid">
+    <div class="row px-xl-5 g-4 d-flex justify-content-center">
 
-      <div class="col-lg-4 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+      <!-- Misión -->
+      <div class="col-lg-4 equal-col" data-aos="fade-up" data-aos-delay="100">
         <div class="metal-card d-flex flex-column">
-            <div class="card-title">
-                <div class="card-ico"><i class="bi bi-bullseye"></i></div>
-                <div>Misión</div>
-            </div>
-            <div class="card-body-content">
-                <p class="text-center">{!! Str::markdown($nosotros->mision) !!}</p>
-            </div>
+          <div class="card-title">
+            <div class="card-ico"><i class="bi bi-bullseye"></i></div>
+            <div>Misión</div>
+          </div>
+
+          <div class="card-body-content">
+            <p class="text-center">{!! Str::markdown($nosotros->mision) !!}</p>
+          </div>
         </div>
       </div>
 
-      <div class="col-lg-4 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="80">
+      <!-- Visión -->
+      <div class="col-lg-4 equal-col" data-aos="fade-up" data-aos-delay="80">
         <div class="metal-card d-flex flex-column">
-            <div class="card-title">
-                <div class="card-ico"><i class="bi bi-eye-fill"></i></div>
-                <div>Visión</div>
-            </div>
-            <div class="card-body-content">
-                <p class="text-center">{!! Str::markdown($nosotros->vision) !!}</p>
-            </div>
+          <div class="card-title">
+            <div class="card-ico"><i class="bi bi-eye-fill"></i></div>
+            <div>Visión</div>
+          </div>
+
+          <div class="card-body-content">
+            <p class="text-center">{!! Str::markdown($nosotros->vision) !!}</p>
+          </div>
         </div>
       </div>
 
-      <div class="col-lg-4 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="80">
+      <!-- Valores -->
+      <div class="col-lg-4 equal-col" data-aos="fade-up" data-aos-delay="80">
         <div class="metal-card d-flex flex-column">
-            <div class="card-title">
-                <div class="card-ico"><i class="bi bi-stars"></i></div>
-                <div>Valores</div>
-            </div>
-            <div class="card-body-content">
+          <div class="card-title">
+            <div class="card-ico"><i class="bi bi-stars"></i></div>
+            <div>Valores</div>
+          </div>
+
+          <div class="card-body-content">
             <ul class="val-list mt-3">
-                <li><i class="bi bi-check-lg"></i> Calidad industrial</li>
-                <li><i class="bi bi-check-lg"></i> Integridad profesional</li>
-                <li><i class="bi bi-check-lg"></i> Compromiso con el cliente</li>
-                <li><i class="bi bi-check-lg"></i> Innovación técnica</li>
-                <li><i class="bi bi-check-lg"></i> Seguridad</li>
+              <li><i class="bi bi-check-lg"></i> Calidad industrial</li>
+              <li><i class="bi bi-check-lg"></i> Integridad profesional</li>
+              <li><i class="bi bi-check-lg"></i> Compromiso con el cliente</li>
+              <li><i class="bi bi-check-lg"></i> Innovación técnica</li>
+              <li><i class="bi bi-check-lg"></i> Seguridad</li>
             </ul>
-        </div>
+          </div>
         </div>
       </div>
 
@@ -346,8 +369,8 @@
 
 <!-- ====== SECTION - MAP & CONTACT CTA ====== -->
 <section class="industrial-bg py-5">
-  <div class="container">
-    <div class="row g-4 align-items-center">
+  <div class="container-fluid">
+    <div class="row px-xl-5 g-4 align-items-center">
       <div class="col-lg-7" data-aos="fade-right">
         <h4 class="about-headline">Encuéntranos</h4>
         <p class="about-sub">Visítanos o solicita una cotización técnica personalizada.</p>
@@ -375,7 +398,7 @@
               <i class="bi bi-envelope-fill"></i> {{$business->email}}
             </a>
 
-            <a href="{{ url('/catalogo') }}" class="cta-metal d-block text-center my-2" style="background: linear-gradient(90deg, rgba(255,184,107,0.08), rgba(255,77,45,0.06));">
+            <a href="{{asset ('storage/' . $archivo)}}" target="_blank" class="cta-metal d-block text-center my-2" style="background: linear-gradient(90deg, rgba(255,184,107,0.08), rgba(255,77,45,0.06));">
               <i class="bi bi-box-seam"></i> Ver Catálogo
             </a>
           </div>

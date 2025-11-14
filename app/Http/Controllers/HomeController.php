@@ -148,8 +148,13 @@ class HomeController extends Controller
         $categories = Taxonomy::whereHas('products', function ($query) {
             $query->where('stock', '>', 0);
         })->take(8)->get();
+
+        $pdf = ModelsPdf::find(1);
+        $pdfFile = json_decode($pdf->archivo, true); 
+        $archivo = $pdfFile[0]['download_link'];
+
         $navbar = 'about';
-        return view('about', compact('categories','business','nosotros','navbar'));
+        return view('about', compact('categories','business','nosotros','navbar', 'archivo'));
     }
 
     public function checkout()
