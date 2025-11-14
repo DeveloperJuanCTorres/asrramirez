@@ -58,7 +58,9 @@ class HomeController extends Controller
         $archivo = $pdfFile[0]['download_link'];
 
         $navbar = 'home';
-        return view('home',compact('categories','banners','promotions','products','business','navbar','archivo'));
+
+        $about = Field::first();
+        return view('home',compact('categories','banners','promotions','products','business','navbar','archivo','about'));
     }
 
     public function store(Request $request)
@@ -107,8 +109,10 @@ class HomeController extends Controller
             $query->where('stock', '>', 0);
         })->get();
 
+        $about = Field::first();
+
        
-        return view('store',compact('categories','brands','products','business'));
+        return view('store',compact('categories','brands','products','business', 'about'));
     }
 
     public function detail (Product $product)

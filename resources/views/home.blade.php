@@ -114,7 +114,7 @@
 <!-- FIN CATEGORÍAS -->
 
 <!-- brochure Start -->
-<div class="container-fluid bg-mobil text-secondary ">
+<div class="container-fluid bg-mobil text-secondary">
     <div class="row px-xl-5 pt-5">
         <div class="col-lg-2"></div>
         <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5 my-auto">
@@ -185,7 +185,7 @@
                     <img class="img-fluid w-100" src="{{asset ('storage/' . str_replace('\\', '/', $imagenes[0]))}}" alt=""
                         style="width:100%; height:100%; object-fit:cover;">
                     @else
-                    <img class="img-fluid w-100" src="{{asset ('storage/' . str_replace('\\', '/', $business->image))}}" alt=""
+                    <img class="img-fluid w-100" src="{{asset ('storage/' . str_replace('\\', '/', $about->image))}}" alt=""
                         style="width:100%; height:100%; object-fit:cover;">
                     @endif
                     <div class="product-action">

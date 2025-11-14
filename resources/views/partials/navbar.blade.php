@@ -21,7 +21,7 @@
                         <img height="60" src="{{asset("storage/$business->image")}}" alt="">
                     </a>
                     <div class="row">
-                        <!-- Lado derecho: Carrito -->
+                        
                         <a href="/cart" class="btn px-2 d-flex align-items-center sesion-destock">
                             <i class="fas fa-shopping-cart text-white"></i>
                             <span id="cartCount" class="badge text-white border border-secondary rounded-circle ml-1" style="padding-bottom: 2px;">
@@ -35,7 +35,7 @@
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
 
                         <div class="navbar-nav m-auto py-2 sesion-destock d-flex align-items-center justify-content-between w-100">    
-                            <!-- Lado izquierdo: Usuario -->
+                           
                             <div class="d-flex align-items-center">
                                 <i class="fas fa-user text-white mr-2"></i>
 
@@ -75,5 +75,7 @@
             </div>
         </div>
     </div>
+
+    
 </div>
 <!-- Navbar End -->

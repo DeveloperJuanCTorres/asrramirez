@@ -54,7 +54,7 @@
 </head>
 <body>
     <div id="app">        
-        <main>
+        <main>            
             @yield('content')
         </main>
     </div>
@@ -75,6 +75,7 @@
     <script src="{{asset('js/phone.js')}}?v=<?php echo $version ?>"></script>
     <script src="{{asset('js/ubigeo.js')}}?v=<?php echo $version ?>"></script>
     <script src="{{asset('js/buscar.js')}}?v=<?php echo $version ?>"></script>
+    
     @stack('scripts')
 </body>
 </html>
