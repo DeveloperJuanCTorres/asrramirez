@@ -94,9 +94,10 @@ class HomeController extends Controller
         }
 
         $products = $products->paginate(6);
+        $about = Field::first();
 
         if ($request->ajax()) {
-            return view('product-list', compact('products','business'))->render();
+            return view('product-list', compact('products','business', 'about'))->render();
         }
 
 
@@ -109,7 +110,7 @@ class HomeController extends Controller
             $query->where('stock', '>', 0);
         })->get();
 
-        $about = Field::first();
+        
 
        
         return view('store',compact('categories','brands','products','business', 'about'));
