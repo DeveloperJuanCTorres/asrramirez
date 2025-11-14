@@ -274,33 +274,33 @@
 
             <div class="row row-cols-1 row-cols-md-1 g-3">
                 <div class="col">
-                <div class="feat-metal" role="article" aria-label="Calidad certificada">
-                    <div class="ico"><i class="bi bi-award-fill" aria-hidden="true"></i></div>
-                    <div>
-                    <h6>Calidad Certificada</h6>
-                    <p>Componentes con certificación y pruebas de resistencia para uso profesional.</p>
+                    <div class="feat-metal" role="article" aria-label="Calidad certificada">
+                        <div class="ico"><i class="bi bi-award-fill" aria-hidden="true"></i></div>
+                        <div>
+                        <h6>Calidad Certificada</h6>
+                        <p>Componentes con certificación y pruebas de resistencia para uso profesional.</p>
+                        </div>
                     </div>
-                </div>
                 </div>
 
                 <div class="col">
-                <div class="feat-metal" role="article" aria-label="Servicio técnico">
-                    <div class="ico"><i class="bi bi-gear-fill" aria-hidden="true"></i></div>
-                    <div>
-                    <h6>Soporte Técnico Especializado</h6>
-                    <p>Asesoría técnica y asistencia posventa para integradores y talleres.</p>
+                    <div class="feat-metal" role="article" aria-label="Servicio técnico">
+                        <div class="ico"><i class="bi bi-gear-fill" aria-hidden="true"></i></div>
+                        <div>
+                        <h6>Soporte Técnico Especializado</h6>
+                        <p>Asesoría técnica y asistencia posventa para integradores y talleres.</p>
+                        </div>
                     </div>
-                </div>
                 </div>
 
                 <div class="col">
-                <div class="feat-metal" role="article" aria-label="Distribución">
-                    <div class="ico"><i class="bi bi-truck" aria-hidden="true"></i></div>
-                    <div>
-                    <h6>Distribución Nacional</h6>
-                    <p>Logística confiable y envíos con seguimiento para cada pedido.</p>
+                    <div class="feat-metal" role="article" aria-label="Distribución">
+                        <div class="ico"><i class="bi bi-truck" aria-hidden="true"></i></div>
+                        <div>
+                        <h6>Distribución Nacional</h6>
+                        <p>Logística confiable y envíos con seguimiento para cada pedido.</p>
+                        </div>
                     </div>
-                </div>
                 </div>
             </div>
             </div>
@@ -344,7 +344,7 @@
       </div>
 
       <!-- Valores -->
-      <div class="col-lg-4 equal-col" data-aos="fade-up" data-aos-delay="80">
+      <div class="col-lg-4 equal-col" data-aos="fade-up" data-aos-delay="280">
         <div class="metal-card d-flex flex-column">
           <div class="card-title">
             <div class="card-ico"><i class="bi bi-stars"></i></div>
